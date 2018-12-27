@@ -1,13 +1,15 @@
 {
   "name": "vue-wiv",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Vue component wrapper for more wiggly divs (https://github.com/jjkaufman/wiv.js)",
   "author": "bronhuston",
   "license": "MIT",
   "repository": "bronhuston/vue-wiv",
+  "main": "./dist/vue-wiv.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-bundle": "vue-cli-service build --target lib --name vue-wiv src/components/Wiv.vue",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -22,5 +24,12 @@
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
     "vue-template-compiler": "^2.5.17"
-  }
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ]
 }
