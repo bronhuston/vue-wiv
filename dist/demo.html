@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<title>vue-wiv demo</title>
+<script src="https://unpkg.com/vue"></script>
+<script src="./vue-wiv.umd.js"></script>
+<link rel="stylesheet" href="./vue-wiv.css">
+
+<div id="app">
+  <demo></demo>
+</div>
+
+<script>
+new Vue({
+  components: {
+    demo: vue-wiv
+  }
+}).$mount('#app')
+</script>
