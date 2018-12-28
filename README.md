@@ -11,6 +11,10 @@ npm install --save vue-wiv
 
 ```
 
+## Example
+
+![Example](https://media.giphy.com/media/fdA9EkzWgHzvvpqxdM/giphy.gif)
+
 ## Usage
 See [App.vue](./src/App.vue) for an example implementation
 
