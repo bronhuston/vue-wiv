@@ -16,25 +16,28 @@ See [App.vue](./src/App.vue) for an example implementation
 
 ```
 <template>
-  <div id="app">
+  <div>
     <Wiv>
       <span>Default Wiv</span>
     </Wiv>
     <Wiv
-      color="#FFFF00"
+      color="#4B0082"
       :height="8"
       :speed=".15"
       :thickness="2"
       :tightness="6"
     >
-      Rough
+      <div>Slow and Wiggly</div>
+    </Wiv>
+    <Wiv>
+      <Wiv>Wiv-ception</Wiv>
     </Wiv>
   </div>
 </template>
 <script>
-import Wiv from './components/Wiv.vue'
+import Wiv from 'vue-wiv'
 export default {
-  name: 'App',
+  name: 'MyComponent',
   components: { Wiv }
 }
 </script>

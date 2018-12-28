@@ -21,7 +21,7 @@
 export default {
   name: 'Wiv',
   props: {
-    color: { type: String, required: false, default: 'black' },
+    color: { type: String, required: false, default: '#7EFFDF' },
     height: { type: Number, required: false, default: 10 },
     speed: { type: Number, required: false, default: 1 },
     tightness: { type: Number, required: false, default: 8 },

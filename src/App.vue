@@ -10,16 +10,24 @@
       :thickness="2"
       :tightness="6"
     >
-      Rough
+      <div>Slow and Wiggly</div>
+    </Wiv>
+    <Wiv>
+      <Wiv>Wiv-ception</Wiv>
     </Wiv>
   </div>
 </template>
 <script>
 import Wiv from './components/Wiv.vue'
+
 export default {
   name: 'App',
   components: { Wiv }
 }
 </script>
 <style>
+  body {
+    background: black;
+    color: white;
+  }
 </style>
