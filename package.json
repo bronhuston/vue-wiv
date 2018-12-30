@@ -35,5 +35,14 @@
     "public/*",
     "*.json",
     "*.js"
+  ],
+  "keywords": [
+    "wiv",
+    "wivjs",
+    "wiv.js",
+    "wiggly",
+    "wavey",
+    "fun",
+    "div"
   ]
 }
