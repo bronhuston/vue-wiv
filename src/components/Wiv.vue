@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { wiv } from 'wiv.js'
 export default {
   name: 'Wiv',
   props: {
@@ -29,7 +30,9 @@ export default {
   },
   data () {
     return {
-      count: 0
+      count: 0,
+      increment: 1,
+      wiv: wiv()
     }
   },
   mounted () {
@@ -38,60 +41,13 @@ export default {
   },
   methods: {
     animateLines () {
+      if (!this.$refs) {
+        return
+      }
       let wivCurve = this.$refs.canvas
-      let ctx = this.$refs.canvas.getContext('2d')
-      let count = this.count
-      ctx.beginPath()
-      ctx.clearRect(0, 0, wivCurve.width, wivCurve.height)
 
-      let x = this.height * 2 + this.thickness
-      let y = this.height - Math.sin(((x - count) * this.tightness) * Math.PI / 180) * this.height + this.thickness
+      this.count = this.wiv.drawLines(wivCurve, this.speed, this.height, this.tightness, this.thickness, this.increment, this.count, this.color)
 
-      // draw top
-      for (x = this.height * 3; x <= wivCurve.width - (this.height * 3); x += 1) {
-        y = this.height - Math.sin(((x - count) * this.tightness) * Math.PI / 180) * this.height + this.thickness
-        ctx.lineTo(x, y)
-      }
-
-      // draw right
-      for (; y <= wivCurve.height - (this.height * 3); y += 1) {
-        x = (wivCurve.width - this.height * 3) + this.height - Math.cos(((y - count) * this.tightness) * Math.PI / 180) * this.height + this.thickness
-        ctx.lineTo(x, y)
-      }
-
-      // draw bottom
-      for (; x >= (this.height * 3); x -= 1) {
-        y = (wivCurve.height - this.height * 3) + this.height - Math.sin(((x - count) * this.tightness) * Math.PI / 180) * this.height + this.thickness
-        ctx.lineTo(x, y)
-      }
-
-      // draw left
-      for (; y >= (this.height * 2) + this.thickness; y -= 1) {
-        x = this.height - Math.cos(((y - count) * this.tightness) * Math.PI / 180) * this.height + this.thickness
-        ctx.lineTo(x, y)
-      }
-
-      // draw top
-      for (; x <= wivCurve.width - (this.height * 3); x += 1) {
-        y = this.height - Math.sin(((x - count) * this.tightness) * Math.PI / 180) * this.height + this.thickness
-        ctx.lineTo(x, y)
-      }
-
-      // pull color from dataset
-      ctx.strokeStyle = this.color
-      ctx.lineWidth = this.thickness
-
-      ctx.stroke()
-
-      // current frame is tracked on per wiv basis. This is to help with speed calculations
-      if (count > 100000) {
-        count = 0
-      }
-
-      count = (count || 0) + this.speed
-      this.count = count
-
-      // reanimate
       window.requestAnimationFrame(this.animateLines)
     },
     initWiv (wiv) {
