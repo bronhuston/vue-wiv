@@ -1,6 +1,6 @@
 {
   "name": "vue-wiv",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Vue component wrapper for more wiggly divs (https://github.com/jjkaufman/wiv.js)",
   "author": "bronhuston",
   "license": "MIT",
