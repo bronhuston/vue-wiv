@@ -5,9 +5,8 @@ Vue component for wiggly divs ([wiv.js](https://github.com/jjkaufman/wiv.js))
 Initialized with the [Vue CLI](https://cli.vuejs.org/).
 ## Install
 
-```
+```bash
 npm install --save vue-wiv
-
 ```
 
 ## Example
@@ -17,7 +16,7 @@ npm install --save vue-wiv
 ## Usage
 See [App.vue](./src/App.vue) for an example implementation
 
-```
+```vue
 <template>
   <div>
     <Wiv>
