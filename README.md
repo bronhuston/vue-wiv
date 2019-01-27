@@ -17,7 +17,7 @@ npm install --save vue-wiv
 ## Usage
 See [App.vue](./src/App.vue) for an example implementation
 
-```
+```html
 <template>
   <div>
     <Wiv>
